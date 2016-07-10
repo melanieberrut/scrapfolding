@@ -254,6 +254,24 @@ module.exports = function (grunt) {
       }
     },
 
+    favicons: {
+      options: {
+        trueColor: true,
+        precomposed: true,
+        appleTouchBackgroundColor: 'transparent',
+        coast: true,
+        windowsTile: true,
+        tileBlackWhite: false,
+        tileColor: 'auto',
+        html: '<%= yeoman.app %>/index.html',
+        HTMLPrefix: ''
+      },
+      icons: {
+        src: '<%= yeoman.app %>/images/favicon.png',
+        dest: '<%= yeoman.app %>/'
+      }
+    },
+
     // Renames files for browser caching purposes
     filerev: {
       dist: {
@@ -508,7 +526,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'favicons'
   ]);
 
   grunt.registerTask('default', [
